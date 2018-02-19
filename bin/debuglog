@@ -2,7 +2,7 @@
 
 /*!
  * debuglog: a DebugLog.Live client
- * ISC Licensed
+ * MIT Licensed
  */
 
 const defaultServer = 'shared.debuglog.live';
