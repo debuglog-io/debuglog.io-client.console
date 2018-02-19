@@ -1,9 +1,9 @@
 # debuglog
 
 DebugLog.Live client to get real-time logs right in your console!
+https://debuglog.live
 
-
-Also a example implementation for DebugLog.Live API usage.
+Also an example implementation for DebugLog.Live API usage.
 
 ## Installation
 
