@@ -1,6 +1,6 @@
 {
   "name": "@debuglog.live/debuglog.live-client",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "DebugLog.Live client to get real-time logs right in your console!",
   "main": "index.js",
   "scripts": {
@@ -31,5 +31,4 @@
   "bin": {
     "debuglog": "./bin/debuglog"
   }
-
 }
