@@ -1,0 +1,79 @@
+#!/usr/bin/env node
+
+/*!
+ * debuglog: a DebugLog.Live client
+ * ISC Licensed
+ */
+
+const defaultServer = 'shared.debuglog.live';
+
+/**
+ * Module dependencies.
+ */
+
+var program = require('commander');
+var connection = require('socket.io-client')
+/**
+ * The actual application
+ */
+var version = require('../package.json').version;
+
+program
+  .version(version)
+  .usage('--account <account> --device <deviceudid> --apikey <key> [options]')
+  .option('-a, --account <account>', 'account to connect')
+  .option('-k, --apikey <key>', 'API key to connect')
+  .option('-s, --server <serveraddress>', 'optional DebugLog.Live server address. Default: shared.debuglog.live')
+  .option('-p, --port <portnumber>', 'optional port number for DebugLog.Live server.')
+  .option('-d, --device <deviceudid>', 'device UDID to connect')
+  .option('-v, --verbose', 'enable verbose logging')
+  .parse(process.argv);
+
+if (!program.apikey) {
+	console.error('\n!!! API key must be specified!');
+	program.help();
+	process.exit(-1);
+} else if (!program.device) {
+	console.error('\n!!! Device UDID must be specified!');
+	program.help();
+	process.exit(-1);
+} else if (!program.device) {
+	console.error('\n!!! Account must be specified!');
+	program.help();
+	process.exit(-1);
+
+
+} else {
+
+var serverToConnect = defaultServer;
+if (program.server) {
+	serverToConnect = program.server;
+}
+
+var client = connection('https://' + serverToConnect + ((program.port) ? ':' + program.port : '') + '/' + program.account);
+
+client.on('connect', function(){
+    log(">> connected");
+    client.emit("authentication" , {"apiKey" : program.apikey});
+});
+
+client.on('authenticated', function(){
+    log(">> authenticated");
+    client.emit("join" , program.device);
+});
+
+client.on('logcat', function(logline) {
+	console.log(logline);
+});
+
+client.on('status', function(statusString) {
+	log("<< " + statusString);
+});
+
+}
+
+function log(data) {
+	if (program.verbose) {
+		console.log(data);
+	}
+}
