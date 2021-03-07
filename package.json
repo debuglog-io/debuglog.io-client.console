@@ -1,18 +1,19 @@
 {
-  "name": "@debuglog.live/debuglog.live-client",
+  "name": "@debuglog.io/debuglog.io-client",
   "version": "0.1.1",
-  "description": "DebugLog.Live client to get real-time logs right in your console!",
+  "description": "DebugLog.IO client to get real-time logs right in your console!",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/debuglog-live/debuglog.live-client.console"
+    "url": "https://github.com/debuglog-io/debuglog.io-client.console"
   },
   "keywords": [
     "debuglog",
     "live",
+    "debuglog.io",
     "stream",
     "client",
     "android",
@@ -22,7 +23,7 @@
     "things",
     "iot"
   ],
-  "author": "DebugLog.Live",
+  "author": "DebugLog.IO",
   "license": "MIT",
   "dependencies": {
     "commander": "~2.14.0",
