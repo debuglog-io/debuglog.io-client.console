@@ -10,7 +10,7 @@ Also an example implementation for DebugLog.IO API usage.
 This module needs to be installed globally so use the `-g` flag when installing:
 
 ```
-npm install -g @debuglog.io/debuglog.io-client
+npm install -g debuglog.io-client
 ```
 
 ## Usage

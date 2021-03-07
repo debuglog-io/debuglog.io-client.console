@@ -1,6 +1,6 @@
 {
-  "name": "@debuglog.io/debuglog.io-client",
-  "version": "0.1.1",
+  "name": "debuglog.io-client",
+  "version": "0.1.2",
   "description": "DebugLog.IO client to get real-time logs right in your console!",
   "main": "index.js",
   "scripts": {
