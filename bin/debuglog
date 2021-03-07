@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
 /*!
- * debuglog: a DebugLog.Live client
+ * debuglog: a DebugLog.IO client
  * MIT Licensed
  */
 
-const defaultServer = 'shared.debuglog.live';
+const defaultServer = 'shared.debuglog.io';
 
 /**
  * Module dependencies.
@@ -23,8 +23,8 @@ program
   .usage('--account <account> --device <deviceudid> --apikey <key> [options]')
   .option('-a, --account <account>', 'account to connect')
   .option('-k, --apikey <key>', 'API key to connect')
-  .option('-s, --server <serveraddress>', 'optional DebugLog.Live server address. Default: shared.debuglog.live')
-  .option('-p, --port <portnumber>', 'optional port number for DebugLog.Live server.')
+  .option('-s, --server <serveraddress>', 'optional DebugLog.IO server address. Default: shared.debuglog.io')
+  .option('-p, --port <portnumber>', 'optional port number for DebugLog.IO server.')
   .option('-d, --device <deviceudid>', 'device UDID to connect')
   .option('-v, --verbose', 'enable verbose logging')
   .parse(process.argv);
